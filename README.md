@@ -1,7 +1,8 @@
 # Goal-conditioned Batch Reinforcement Learning for Rotation-Invariant Locomotion
 
 This README contains all the details required to run the code to reproduce
-the results of the paper.
+the results of the paper `Goal-conditioned Batch Reinforcement Learning for
+Rotation Invariant Locomotion`.
 
 ### Dependencies
 - Python 3.5
@@ -12,12 +13,12 @@ the results of the paper.
 - MuJoCo
 - Pybullet
 
-For the standard RL and goal-conditioned RL baselines, we use existing code
+The standard RL and goal-conditioned RL baselines use existing code
 from `OpenAI baselines` and `stable-baselines`. The standard RL baseline for
 the Ant is trained using the Proximal Policy Optimization (PPO) code from
 `baselines`. For the Humanoid and Minitaur, the standard RL baselines are
-trained using the Soft Actor-Critic (SAC) code from `stable-baselines`. We used
-the default hyperparameters (details in Appendix).
+trained using the Soft Actor-Critic (SAC) code from `stable-baselines` with
+default hyperparameters.
 
 ### Environments
 - Ant - MuJoco
@@ -27,16 +28,15 @@ the default hyperparameters (details in Appendix).
 ### How to run the code?
 
 The scripts for the goal-conditioned batch RL methods discussed in the paper
-are in the directory `scripts/`. We provide the modified environments to convert
-the locomotion task to goal-directed locomotion in `modified_envs/`. We provide
-pretrained models of all methods (including standard RL and goal-conditioned
-  RL baselines) in `checkpoints/`. Due to space constraints, we were unable to
-  upload the data used to train all goal-conditioned batch RL methods, but we
-  will provide the data with the camera-ready version.
+are in the directory `scripts/`. The modified environments to convert
+the locomotion task to goal-directed locomotion are present in `modified_envs/`.
+Pretrained models of all methods (including standard RL and goal-conditioned
+RL baselines) can be downloaded [here](https://drive.google.com/drive/folders/1sHq7gUf4AeUy80D1883l1iZgtTgpn_dH?usp=sharing).
+The data used to train all baselines can be downloaded [here](https://drive.google.com/open?id=1VJwfyC6JmkgEyKL8tbFQ9niaV0n7ZY4j).
 
 In order to train/test any of the goal-conditioned batch RL methods (using
-  either equivalence or the naive goal-conditioned policy), we use the following
-  command:
+either equivalence or the naive goal-conditioned policy), use the following
+command:
 
 ```
 python main.py
@@ -57,7 +57,7 @@ python main.py
   --start-index st (optionally start training from index != 0)
   --n-training-samples n-tr
   -k embedding-dim (dimension of the embeddings produced by the encoder - used
-    only in our approach)
+    only in this approach)
 
   # Testing
   --test-only (evaluate an existing model)
@@ -71,7 +71,7 @@ python main.py
 ```
 
 For instance, to train an Ant for 2M timesteps using the data file
-`ant-on-policy-samples` with learning rate 0.001 and batch size 512, we do
+`ant-on-policy-samples` with learning rate 0.001 and batch size 512, do
 the following:
 
 ```
@@ -84,16 +84,20 @@ If not specified, the other hyperparameters will assume default values.
 
 ### Results
 
-We provide a script `performance.py` in the `scripts/` directory to measure the
+The `performance.py` script in the `scripts/` directory measures the
 performance of the goal-conditioned batch RL methods. This script computes the
 performance metric: the closest distance to the goal that the agent is able to
 achieve, for 1000 episodes spread uniformly over 10 random seeds. In order to
 ensure fair comparison, the random seeds are maintained across all methods. The
 details of goal generation are provided in the Appendix.
 
-We report all the quantitative results in the paper. We also provide some
-qualitative results in the paper and Appendix. Furthermore, we provide qualitative
-results in the form of videos in the `videos/` directory. Note that the Humanoid
-trained using our approach walks much faster towards the goals, and in a much
+Both quantitative and qualitative results are reported in the paper. Furthermore,
+qualitative results of comparisons between this approach and the best standard RL
+baseline, in the form of videos, can be found [here](https://drive.google.com/drive/folders/1q1Hi5n7f866-a_LMlsaWnNbjFaF28-4i?usp=sharing). Note that the Humanoid
+trained using this approach walks much faster towards the goals, and in a much
 better manner than the one trained using standard RL techniques, even though
 both agents ultimately reach the goals in the example provided.
+
+The following gifs show qualitative examples of this approach in the Ant and Humanoid environments:
+
+<img src="Ant.gif" width="410"> <img src="Humanoid.gif" width="390">
