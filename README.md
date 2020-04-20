@@ -100,4 +100,16 @@ both agents ultimately reach the goals in the example provided.
 
 The following gifs show qualitative examples of this approach in the Ant and Humanoid environments:
 
-<img src="Ant.gif" width="410"> <img src="Humanoid.gif" width="390">
+<img src="Ant.gif" width="400"> <img src="Humanoid.gif" width="370">
+
+If you use this work, please consider citing the following paper:
+```
+@misc{mavalankar2020goalconditioned,
+    title={Goal-conditioned Batch Reinforcement Learning for Rotation Invariant Locomotion},
+    author={Aditi Mavalankar},
+    year={2020},
+    eprint={2004.08356},
+    archivePrefix={arXiv},
+    primaryClass={cs.LG}
+}
+```
