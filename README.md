@@ -100,7 +100,7 @@ both agents ultimately reach the goals in the example provided.
 
 The following gifs show qualitative examples of this approach in the Ant and Humanoid environments:
 
-<img src="Ant.gif" width="400"> <img src="Humanoid.gif" width="370">
+<img src="Ant.gif" width="400"> <img src="Humanoid.gif" width="380">
 
 If you use this work, please consider citing the following paper:
 ```
