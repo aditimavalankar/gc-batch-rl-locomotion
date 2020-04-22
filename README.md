@@ -5,7 +5,7 @@ the results of the paper `Goal-conditioned Batch Reinforcement Learning for
 Rotation Invariant Locomotion`.
 
 ### Dependencies
-- Python 3.5
+- Python 3.5+
 - Pytorch (>= 0.4.0 with CUDA version >= 9.0)
 - Tensorflow (>= 1.14)
 - NumPy
@@ -14,16 +14,16 @@ Rotation Invariant Locomotion`.
 - Pybullet
 
 The standard RL and goal-conditioned RL baselines use existing code
-from `OpenAI baselines` and `stable-baselines`. The standard RL baseline for
+from [OpenAI baselines](https://github.com/openai/baselines) and [stable-baselines](https://github.com/hill-a/stable-baselines). The standard RL baseline for
 the Ant is trained using the Proximal Policy Optimization (PPO) code from
 `baselines`. For the Humanoid and Minitaur, the standard RL baselines are
 trained using the Soft Actor-Critic (SAC) code from `stable-baselines` with
 default hyperparameters.
 
 ### Environments
-- Ant - MuJoco
-- Humanoid - Pybullet
-- Minitaur - Pybullet
+- Ant - [OpenAI Gym](https://gym.openai.com/) [Mujoco](http://www.mujoco.org/)
+- Humanoid - [Pybullet](https://github.com/bulletphysics/bullet3/tree/master/examples/pybullet)
+- Minitaur - [Pybullet](https://github.com/bulletphysics/bullet3/tree/master/examples/pybullet)
 
 ### How to run the code?
 
@@ -101,6 +101,9 @@ both agents ultimately reach the goals in the example provided.
 The following gifs show qualitative examples of this approach in the Ant and Humanoid environments:
 
 <img src="Ant.gif" width="400"> <img src="Humanoid.gif" width="380">
+
+
+### Citing this work
 
 If you use this work, please consider citing the following paper:
 ```
